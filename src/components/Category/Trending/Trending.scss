@@ -1,0 +1,36 @@
+.trending-wrapper {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    text-align: center;
+
+    .buttons {
+        max-width: 800px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        a {
+            border: 1px solid var(--primary-color);
+            text-decoration: none;
+            color: inherit;
+            padding: 10px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--primary-color);
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .trending-wrapper {
+        .buttons {
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+}

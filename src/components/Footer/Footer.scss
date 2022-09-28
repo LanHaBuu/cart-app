@@ -1,0 +1,153 @@
+.footer-wrapper {
+    width: 100%;
+    background-color: #2A2A86;
+    color: #F2FFFF;
+
+
+    .footer {
+        max-width: 1820px;
+        margin: 0 auto;
+        padding: 50px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #6A6AAA;
+
+        .social-icon {
+            display: flex;
+            gap: 20px;
+            font-size: 2.2rem;
+            cursor: pointer;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        li:hover {
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .about-list,
+        .support-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social {
+            width: 30%;
+        }
+
+        .about,
+        .support,
+        .contact {
+            width: 20%;
+        }
+
+        .activeFooter {
+            display: flex !important;
+        }
+
+        .title {
+            display: flex;
+            gap: 5px;
+
+            .btn-mobile {
+                display: none;
+            }
+        }
+
+        .contact {
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            span,
+            a {
+                margin-left: 10px;
+            }
+
+            .location,
+            .phone,
+            .email {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+    }
+
+    .text-footer {
+        padding: 20px 0;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}
+
+
+@media (max-width:992px) {
+    .footer-wrapper {
+
+        .footer {
+            width: 70%;
+            margin: auto;
+            flex-wrap: wrap;
+
+            .social {
+                width: 100%;
+                display: block;
+
+                .social-icon {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .about,
+            .support,
+            .contact {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .footer-wrapper {
+
+        .footer {
+
+            .about,
+            .support,
+            .contact {
+                width: 100% !important;
+            }
+
+            .about-list,
+            .support-list {
+                display: none;
+            }
+
+            .title {
+                .btn-mobile {
+                    display: block;
+                }
+            }
+        }
+    }
+}

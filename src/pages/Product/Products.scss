@@ -1,0 +1,43 @@
+.products-wrapper {
+    padding-top: var(--height-header);
+    max-width: 1820px;
+    margin: 0 auto;
+
+    .title {
+        text-align: center;
+        color: var(--primary-color);
+        text-transform: uppercase;
+    }
+
+    .buttons {
+        text-align: center;
+        margin: 20px 0;
+        background-color: #F8F8F8;
+        padding: 20px 0;
+
+
+        .active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        button {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: 1px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 7px;
+            color: var(--primary-color);
+            background-color: transparent;
+            margin: 10px 5px;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover,
+            {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    }
+}
+}

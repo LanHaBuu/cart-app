@@ -1,0 +1,14 @@
+.skeleton-product-wrapper {
+
+    &>span {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .skeleton-product {
+        width: calc(100% / 6 - 20px);
+        height: 470px;
+        margin: 20px 0;
+    }
+}
