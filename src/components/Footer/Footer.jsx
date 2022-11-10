@@ -77,7 +77,7 @@ function Footer() {
 				<div className='contact'>
 					<div className='location'>
 						<ImLocation2 />
-						<span>43 Hoàng Diệu, Đà Nẵng</span>
+						<span>45 Hoàng Diệu, Đà Nẵng</span>
 					</div>
 					<div className='phone'>
 						<BsTelephoneFill />
