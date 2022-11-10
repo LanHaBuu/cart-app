@@ -253,7 +253,7 @@
 
 }
 
-@media (max-width:992px) {
+@media (min-width:577px) and (max-width:992px) {
     .header-wrapper {
         .logo {
             font-size: 2rem;
@@ -268,6 +268,36 @@
                 display: none;
             }
 
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .header-wrapper {
+        // .header {
+        //     justify-content: normal;
+        // }
+
+        .logo {
+            display: none;
+        }
+
+        .search {
+            width: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cart {
+            span {
+                display: none;
+            }
+
+            .cart-add-wrapper {
+                .cart-add {
+                    width: 315px;
+                }
+            }
         }
     }
 }

@@ -314,3 +314,17 @@
         }
     }
 }
+
+@media (max-width:576px) {
+    .pay-wrapper {
+        .infor-ship {
+            .wrapper-left {
+                .wrapper-content {
+                    .content-footer {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -154,10 +154,38 @@
 
             .content-left {
                 width: auto;
+
+
             }
 
             .content-right {
                 width: auto;
+            }
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .cart-wrapper {
+        .content {
+            .content-left {
+                .header {
+                    .header-list {
+                        .header-item:last-child {
+                            display: none;
+                        }
+                    }
+                }
+
+                .product-detail {
+                    .product {
+                        .last {
+                            .total {
+                                display: none;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

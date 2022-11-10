@@ -8,7 +8,6 @@ import { stateInputHeader } from "../redux/Slice/State"
 import { RiDeleteBin6Line } from "react-icons/ri"
 import "./Header.scss"
 import { removeCart } from "../redux/Slice/ProductAddCart"
-import { useRef } from "react"
 
 function Header() {
 	const [input, setInput] = useState("")
@@ -17,9 +16,6 @@ function Header() {
 	const { dataProducts } = useDataProducts()
 	const { state } = useSelector(state => state.state)
 	const { data } = useSelector(state => state.cart)
-	const [show, setShow] = useState(true)
-
-	const productRef = useRef()
 
 	const dispatch = useDispatch()
 
@@ -64,13 +60,11 @@ function Header() {
 							setInput(e.target.value)
 							dispatch(stateInputHeader(true))
 						}}
-						onBlur={() => setShow(false)}
-						onFocus={() => setShow(true)}
 					/>
 					<div className='search-icon'>
 						<BsSearch />
 					</div>
-					{state && show && (
+					{state && (
 						<div className='result'>
 							{dataInput && dataInput.length > 0 ? (
 								dataInput.map(product => (
@@ -78,7 +72,8 @@ function Header() {
 										to={`/product/${product.id}`}
 										className='result-container'
 										key={product.id}
-										onClick={() => {
+										onClick={e => {
+											e.stopPropagation()
 											dispatch(stateInputHeader(false))
 											setInput("")
 										}}

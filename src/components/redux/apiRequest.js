@@ -10,7 +10,7 @@ export const useDataProducts = () => {
 		isMouted.current = true
 		setLoading(true)
 		axios
-			.get("https://mocki.io/v1/1d6d5047-18fd-4b02-a3b2-a6877edead02")
+			.get("https://mocki.io/v1/9a5a59a0-24db-403d-9488-2ad6f16af3e9")
 			.then(res => {
 				if (isMouted.current) {
 					setDataProducts(res.data)

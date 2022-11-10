@@ -6,16 +6,23 @@ import {
 	addCart,
 	removeCart,
 } from "../../components/redux/Slice/ProductAddCart"
+import { stateInputHeader } from "../../components/redux/Slice/State"
 import "./Cart.scss"
 
 function Cart() {
 	const { data } = useSelector(state => state.cart)
+
 	const [total, setTotal] = useState()
 	const dispatch = useDispatch()
 	const [amount, setAmount] = useState(null)
 
 	const handleDel = index => {
 		dispatch(removeCart(index))
+	}
+
+	const handleIncrease = product => {
+		dispatch(addCart(product))
+		console.log(data)
 	}
 
 	useEffect(() => {
@@ -43,7 +50,10 @@ function Cart() {
 	}, [data])
 
 	return (
-		<div className='cart-wrapper'>
+		<div
+			className='cart-wrapper'
+			onClick={() => dispatch(stateInputHeader(false))}
+		>
 			<div className='content'>
 				<div className='content-left'>
 					<div className='title'>
@@ -51,14 +61,6 @@ function Cart() {
 						<p className='count'>{`(${amount}) sản phẩm`}</p>
 					</div>
 					<div className='product-detail'>
-						<div className='header'>
-							<ul className='header-list'>
-								<li className='header-item'>Sản phẩm</li>
-								<li className='header-item'>Đơn giá</li>
-								<li className='header-item'>Số lượng</li>
-								<li className='header-item'>Thành tiền</li>
-							</ul>
-						</div>
 						{data.length > 0 && (
 							<div className='note'>
 								<span>
@@ -71,15 +73,26 @@ function Cart() {
 								</span>
 							</div>
 						)}
+						<div className='header'>
+							<ul className='header-list'>
+								<li className='header-item'>Sản phẩm</li>
+								<li className='header-item'>Đơn giá</li>
+								<li className='header-item'>Số lượng</li>
+								<li className='header-item'>Thành tiền</li>
+							</ul>
+						</div>
+
 						{data && data.length > 0 ? (
 							data.map((product, index) => (
 								<div className='product' key={product.id}>
 									<div className='product-left'>
-										<img
-											src={product.img}
-											alt=''
-											className='product-img'
-										/>
+										<Link to={`/product/${product.id}`}>
+											<img
+												src={product.img}
+												alt=''
+												className='product-img'
+											/>
+										</Link>
 										<p className='product-desc'>
 											{product.description}
 										</p>
